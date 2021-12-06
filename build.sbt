@@ -6,7 +6,8 @@ name := "dodgy"
 
 addCommandAlias("fmt", "all root/scalafmtSbt root/scalafmtAll")
 addCommandAlias("fmtCheck", "all root/scalafmtSbtCheck root/scalafmtCheckAll")
-logo        :=
+
+logo :=
   s"""|     _           _
       |  __| | ___   __| | __ _ _   _
       | / _` |/ _ \\ / _` |/ _` | | | |
@@ -14,6 +15,7 @@ logo        :=
       | \\__,_|\\___/ \\__,_|\\__, |\\__, |
       |                   |___/ |___/
       |""".stripMargin
+
 usefulTasks := Seq(
   UsefulTask("a", "start", "Start the local webpack server at http://localhost:8888"),
   UsefulTask("b", "fastOptJS", "Compiles Scala.js files and live reloads if the app is open in the browser"),
@@ -68,6 +70,7 @@ def withCssLoading(project: Project) =
     )
   )
 
+// These tasks come from https://github.com/ScalablyTyped/Demos
 def browserProject(project: Project) =
   project.settings(
     start := {
